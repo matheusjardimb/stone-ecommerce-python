@@ -11,6 +11,7 @@ setup(
         'stoneEcommercePython': 'stoneEcommercePython',
         'data_contracts': 'stoneEcommercePython/data_contracts',
         'enum_types': 'stoneEcommercePython/enum_types',
+        'stone_config': 'stoneEcommercePython/stone_config',
         'resource_clients': 'stoneEcommercePython/resource_clients',
         'transaction_report_file': 'stoneEcommercePython/transaction_report_file'
     },
