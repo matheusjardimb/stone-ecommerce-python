@@ -7,8 +7,8 @@ class GatewayServiceClient(object):
     def __init__(self, merchant_key=None, environment=None, http_content_type=None, host_uri=None,
                  configuration_path=None):
         if configuration_path:
-            self.sale = SaleResource(merchant_key, environment, http_content_type, host_uri,
-                                     ConfigurationUtility(configuration=configuration_path))
+            utility = ConfigurationUtility(configuration=configuration_path)
+            self.sale = SaleResource(merchant_key, environment, http_content_type, host_uri, utility)
         else:
             self.sale = SaleResource(merchant_key, environment, http_content_type, host_uri)
         self.credit_card = CreditCardResource(merchant_key, environment, http_content_type, host_uri)

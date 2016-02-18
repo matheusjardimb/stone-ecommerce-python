@@ -4,11 +4,10 @@ from urllib.parse import urljoin
 from uuid import UUID
 
 import requests
-
 from stoneEcommercePython.data_contracts.CreateSaleRequest import create_sale_request, sale_options
 from stoneEcommercePython.data_contracts.ManageSaleRequest import manage_sale_request
 from stoneEcommercePython.data_contracts.RetrySaleRequest import retry_sale_request
-from stoneEcommercePython.resource_clients import AbstractResource
+from stoneEcommercePython.resource_clients.AbstractResource import AbstractResource
 
 
 class uuid_serialize(json.JSONEncoder):

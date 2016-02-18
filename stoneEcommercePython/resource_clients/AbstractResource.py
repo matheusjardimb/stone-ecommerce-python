@@ -1,7 +1,7 @@
 from abc import ABCMeta
 
+from stoneEcommercePython.enum_types import PlatformEnvironment
 from stoneEcommercePython.stone_config.ConfigurationUtility import ConfigurationUtility
-from ..enum_types import PlatformEnvironment
 
 
 class AbstractResource(object):

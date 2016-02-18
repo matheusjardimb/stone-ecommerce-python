@@ -2,8 +2,7 @@ from urllib.parse import urljoin
 from uuid import UUID
 
 import requests
-
-from stoneEcommercePython.stone_config.ConfigurationUtility import ConfigurationUtility
+from stone_config.ConfigurationUtility import ConfigurationUtility
 
 
 class TransactionReport(object):
