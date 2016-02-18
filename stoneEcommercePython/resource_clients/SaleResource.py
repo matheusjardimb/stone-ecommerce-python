@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 import json
-import urlparse
+from urllib.parse import urljoin
 from uuid import UUID
 
 import requests
-from data_contracts import create_sale_request, sale_options, manage_sale_request, retry_sale_request
 
-from AbstractResource import AbstractResource
+from stoneEcommercePython.data_contracts.CreateSaleRequest import create_sale_request, sale_options
+from stoneEcommercePython.data_contracts.ManageSaleRequest import manage_sale_request
+from stoneEcommercePython.data_contracts.RetrySaleRequest import retry_sale_request
+from stoneEcommercePython.resource_clients import AbstractResource
 
 
 class uuid_serialize(json.JSONEncoder):
@@ -24,7 +26,7 @@ class SaleResource(AbstractResource):
     def create_with_request(self, create_sale_request):
         request_header = {"MerchantKey": str(self.merchant_key), 'Content-Type': 'application/json',
                           'Accept': 'application/json'}
-        return requests.post(urlparse.urljoin(self.host_uri, 'Sale'),
+        return requests.post(urljoin(self.host_uri, 'Sale'),
                              data=json.dumps(create_sale_request, cls=uuid_serialize), headers=request_header)
 
     def create_with_creditcard_collection(self, creditcard_transaction_collection):
@@ -56,7 +58,7 @@ class SaleResource(AbstractResource):
         request_header = {"MerchantKey": str(self.merchant_key), 'Content-Type': 'application/json',
                           'Accept': 'application/json'}
 
-        return requests.post(urlparse.urljoin(self.host_uri, action_name),
+        return requests.post(urljoin(self.host_uri, action_name),
                              data=json.dumps(manage_sale_request, cls=uuid_serialize), headers=request_header)
 
     def manage_with_order_key(self, manage_operation, order_key):
@@ -77,7 +79,7 @@ class SaleResource(AbstractResource):
         request_header = {"MerchantKey": str(self.merchant_key), 'Content-Type': 'application/json',
                           'Accept': 'application/json'}
         action_name = self.resource_name + '/Retry'
-        return requests.post(urlparse.urljoin(self.host_uri, action_name),
+        return requests.post(urljoin(self.host_uri, action_name),
                              data=json.dumps(retry_sale_request, cls=uuid_serialize), headers=request_header)
 
     def retry_with_order_key(self, order_key):
@@ -116,4 +118,4 @@ class SaleResource(AbstractResource):
 
         request_header = {"MerchantKey": str(self.merchant_key), 'Content-Type': 'application/json',
                           'Accept': 'application/json'}
-        return requests.get(urlparse.urljoin(self.host_uri, action_name), headers=request_header)
+        return requests.get(urljoin(self.host_uri, action_name), headers=request_header)

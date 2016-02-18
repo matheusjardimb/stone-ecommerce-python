@@ -1,3 +1,3 @@
-from HttpContentTypeEnum import HttpContentTypeEnum
-from ManageOperationEnum import ManageOperationEnum
-from PlatformEnvironment import PlatformEnvironment
+from .HttpContentTypeEnum import HttpContentTypeEnum
+from .ManageOperationEnum import ManageOperationEnum
+from .PlatformEnvironment import PlatformEnvironment

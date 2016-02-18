@@ -1,2 +1,2 @@
-from TransactionReportParser import TransactionReportParser
-from TransactionReportClient import TransactionReport
+from .TransactionReportParser import TransactionReportParser
+from .TransactionReportClient import TransactionReport

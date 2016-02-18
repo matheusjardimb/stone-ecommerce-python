@@ -1,4 +1,4 @@
-from GatewayServiceClient import GatewayServiceClient
-import data_contracts
-import enum_types
-import resource_clients
+from .GatewayServiceClient import GatewayServiceClient
+from . import data_contracts
+from . import enum_types
+from . import resource_clients

@@ -1,6 +1,6 @@
 import requests
 
-from AbstractResource import AbstractResource
+from ..resource_clients import AbstractResource
 
 
 class CreditCardResource(AbstractResource):

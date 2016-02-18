@@ -1,7 +1,7 @@
 from abc import ABCMeta
 
-from stoneEcommercePython.ConfigurationUtility import ConfigurationUtility
-from enum_types import PlatformEnvironment
+from ..ConfigurationUtility import ConfigurationUtility
+from ..enum_types import PlatformEnvironment
 
 
 class AbstractResource(object):
@@ -29,4 +29,3 @@ class AbstractResource(object):
                       PlatformEnvironment.sandbox: self.__configuration_utility.sandbox_host_uri()}
 
         return switch_uri.get(environment)
-

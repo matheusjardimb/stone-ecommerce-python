@@ -1,4 +1,4 @@
-import urlparse
+from urllib.parse import urljoin
 from uuid import UUID
 
 import requests
@@ -19,7 +19,7 @@ class TransactionReport(object):
     def download_report(self, file_date):
         request_header = {"MerchantKey": str(self.merchant_key)}
         resource = "/TransactionReportFile/GetStream?fileDate=" + file_date
-        return requests.get(urlparse.urljoin(self.host_uri, resource), headers=request_header)
+        return requests.get(urljoin(self.host_uri, resource), headers=request_header)
 
     def download_report_to_file(self, file_date, file_name):
         http_response = self.download_report(file_date)
