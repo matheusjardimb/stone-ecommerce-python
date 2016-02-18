@@ -1,6 +1,6 @@
 from abc import ABCMeta
 
-from ..ConfigurationUtility import ConfigurationUtility
+from stoneEcommercePython.stone_config.ConfigurationUtility import ConfigurationUtility
 from ..enum_types import PlatformEnvironment
 
 

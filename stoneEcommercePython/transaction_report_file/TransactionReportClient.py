@@ -3,7 +3,7 @@ from uuid import UUID
 
 import requests
 
-from stoneEcommercePython.ConfigurationUtility import ConfigurationUtility
+from stoneEcommercePython.stone_config.ConfigurationUtility import ConfigurationUtility
 
 
 class TransactionReport(object):

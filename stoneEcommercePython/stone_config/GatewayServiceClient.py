@@ -1,6 +1,6 @@
-from . import ConfigurationUtility
-from .resource_clients.CreditCardResource import CreditCardResource
-from .resource_clients.SaleResource import SaleResource
+from stoneEcommercePython.resource_clients.CreditCardResource import CreditCardResource
+from stoneEcommercePython.resource_clients.SaleResource import SaleResource
+from stoneEcommercePython.stone_config import ConfigurationUtility
 
 
 class GatewayServiceClient(object):
